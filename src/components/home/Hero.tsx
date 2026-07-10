@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <div className="relative overflow-hidden bg-background pt-[140px] pb-[100px]">
+    <div className="relative overflow-hidden bg-background min-h-[85vh] flex flex-col justify-center pt-[80px]">
       {/* Premium subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-80" />
 
