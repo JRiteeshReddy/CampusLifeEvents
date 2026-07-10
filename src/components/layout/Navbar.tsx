@@ -16,16 +16,16 @@ export function Navbar() {
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/" className="text-sm font-medium text-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             Home
           </Link>
-          <Link href="/events" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/events" className="text-sm font-medium text-muted-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             Events
           </Link>
-          <Link href="/clubs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/clubs" className="text-sm font-medium text-muted-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             Clubs
           </Link>
-          <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/about" className="text-sm font-medium text-muted-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             About
           </Link>
         </nav>
