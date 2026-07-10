@@ -7,11 +7,7 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <div className="relative overflow-hidden bg-background pt-[120px] pb-[80px]">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[100px]" />
-        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[60%] rounded-full bg-secondary/20 blur-[100px]" />
-      </div>
+
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         <motion.div
