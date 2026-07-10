@@ -11,36 +11,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-80" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-8 backdrop-blur-sm"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-          GITAM University Official Portal
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-7xl font-extrabold text-foreground mb-6 tracking-tight max-w-4xl leading-[1.1]"
+          className="text-5xl md:text-7xl font-extrabold text-foreground mb-12 tracking-tight max-w-4xl leading-[1.1]"
         >
           Discover & Experience <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          <span className="text-primary">
             Campus Life Events
           </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-foreground/70 mb-12 max-w-2xl leading-relaxed font-light"
-        >
-          Your one-stop platform for all university clubs, fests, workshops, and extracurricular activities. Engage, learn, and grow.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
