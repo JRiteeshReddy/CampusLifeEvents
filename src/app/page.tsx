@@ -15,9 +15,9 @@ export default function Home() {
       </div>
       
       {/* Simple Footer */}
-      <footer className="bg-dark-primary py-12 text-center text-primary-foreground/70">
+      <footer className="bg-dark-primary py-12 text-center text-white/80">
         <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-primary-foreground mb-4">Campus Life Events</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">Campus Life Events</h3>
           <p className="mb-8">GITAM (Deemed to be University)</p>
           <div className="flex justify-center space-x-6 text-sm">
             <Link href="/login" className="hover:text-secondary transition-colors">Admin Login</Link>
