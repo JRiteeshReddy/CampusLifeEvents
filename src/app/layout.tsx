@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { EventProvider } from "@/context/EventContext";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -29,8 +30,10 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        {children}
-        <Toaster />
+        <EventProvider>
+          {children}
+          <Toaster />
+        </EventProvider>
       </body>
     </html>
   );

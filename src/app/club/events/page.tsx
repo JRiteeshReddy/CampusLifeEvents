@@ -1,14 +1,16 @@
 "use client";
 
-import { MOCK_EVENTS } from "@/lib/mock-data";
+import { useEvents } from "@/context/EventContext";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Edit, Eye } from "lucide-react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 export default function MyEventsPage() {
+  const { events } = useEvents();
   // Mocking the current logged-in club
-  const myEvents = MOCK_EVENTS.filter(e => e.club_name === 'GUSAC' || e.club_name === 'ACM Student Chapter');
+  const myEvents = events.filter(e => e.club_name === 'GUSAC' || e.club_name === 'ACM Student Chapter');
 
   return (
     <div className="space-y-8">
@@ -56,10 +58,10 @@ export default function MyEventsPage() {
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div className="flex justify-end gap-2">
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary" onClick={() => toast("Viewing event details...")}>
                       <Eye className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary" onClick={() => toast("Opening edit modal...")}>
                       <Edit className="h-4 w-4" />
                     </Button>
                   </div>

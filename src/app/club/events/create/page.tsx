@@ -9,18 +9,35 @@ import { ArrowLeft, Save } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { useEvents } from "@/context/EventContext";
 
 export default function CreateEventPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { addEvent } = useEvents();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
     
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
+      addEvent({
+        title: formData.get("title") as string,
+        description: formData.get("description") as string,
+        category: formData.get("category") as string,
+        venue: formData.get("venue") as string,
+        date: formData.get("date") as string,
+        start_time: formData.get("startTime") as string,
+        end_time: formData.get("endTime") as string,
+        max_capacity: Number(formData.get("capacity")),
+        seats_remaining: Number(formData.get("capacity")),
+        banner_url: formData.get("banner") as string || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+        club_name: "GUSAC", // Defaulting for mock
+        status: "Pending", // Mock initial status
+      });
       toast.success("Event created successfully!", {
         description: "Your event has been submitted for admin approval."
       });
@@ -51,13 +68,14 @@ export default function CreateEventPage() {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="title">Event Title</Label>
-              <Input id="title" placeholder="e.g. Tech Symposium 2026" required className="bg-background" />
+              <Input id="title" name="title" placeholder="e.g. Tech Symposium 2026" required className="bg-background" />
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="description">Description</Label>
               <textarea 
                 id="description" 
+                name="description"
                 className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Describe what your event is about..."
                 required
@@ -69,10 +87,12 @@ export default function CreateEventPage() {
                 <Label htmlFor="category">Category</Label>
                 <select 
                   id="category" 
+                  name="category"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   required
+                  defaultValue=""
                 >
-                  <option value="" disabled selected>Select a category</option>
+                  <option value="" disabled>Select a category</option>
                   <option value="Technical">Technical</option>
                   <option value="Cultural">Cultural</option>
                   <option value="Workshops">Workshops</option>
@@ -81,33 +101,33 @@ export default function CreateEventPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="capacity">Max Capacity</Label>
-                <Input id="capacity" type="number" min="1" placeholder="e.g. 100" required className="bg-background" />
+                <Input id="capacity" name="capacity" type="number" min="1" placeholder="e.g. 100" required className="bg-background" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="date">Date</Label>
-                <Input id="date" type="date" required className="bg-background" />
+                <Input id="date" name="date" type="date" required className="bg-background" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="startTime">Start Time</Label>
-                <Input id="startTime" type="time" required className="bg-background" />
+                <Input id="startTime" name="startTime" type="time" required className="bg-background" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="endTime">End Time</Label>
-                <Input id="endTime" type="time" required className="bg-background" />
+                <Input id="endTime" name="endTime" type="time" required className="bg-background" />
               </div>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="venue">Venue</Label>
-              <Input id="venue" placeholder="e.g. Main Auditorium" required className="bg-background" />
+              <Input id="venue" name="venue" placeholder="e.g. Main Auditorium" required className="bg-background" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="banner">Banner Image URL</Label>
-              <Input id="banner" type="url" placeholder="https://images.unsplash.com/..." required className="bg-background" />
+              <Input id="banner" name="banner" type="url" placeholder="https://images.unsplash.com/..." required className="bg-background" />
               <p className="text-xs text-muted-foreground">Provide a direct link to an image for your event banner.</p>
             </div>
           </CardContent>

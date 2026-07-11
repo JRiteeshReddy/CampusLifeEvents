@@ -2,11 +2,12 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Users, CheckCircle, Clock } from "lucide-react";
-import { MOCK_EVENTS } from "@/lib/mock-data";
+import { useEvents } from "@/context/EventContext";
 import { Badge } from "@/components/ui/badge";
 
 export default function ClubDashboard() {
-  const myEvents = MOCK_EVENTS.filter(e => e.club_name === 'GUSAC' || e.club_name === 'ACM Student Chapter'); // Mocking current club
+  const { events } = useEvents();
+  const myEvents = events.filter(e => e.club_name === 'GUSAC' || e.club_name === 'ACM Student Chapter'); // Mocking current club
 
   return (
     <div className="space-y-8">
@@ -22,7 +23,7 @@ export default function ClubDashboard() {
             <Calendar className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-foreground">12</div>
+            <div className="text-3xl font-bold text-foreground">{myEvents.length}</div>
           </CardContent>
         </Card>
         <Card className="bg-card border-border/50 shadow-sm">
