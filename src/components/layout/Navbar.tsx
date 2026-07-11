@@ -15,7 +15,7 @@ export function Navbar() {
           />
         </Link>
         
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
           <Link href="/" className="text-sm font-medium text-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             Home
           </Link>
@@ -24,9 +24,6 @@ export function Navbar() {
           </Link>
           <Link href="/clubs" className="text-sm font-medium text-muted-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
             Clubs
-          </Link>
-          <Link href="/about" className="text-sm font-medium text-muted-foreground relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-primary transition-colors">
-            About
           </Link>
         </nav>
 
