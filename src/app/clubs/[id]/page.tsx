@@ -22,7 +22,7 @@ export default async function ClubDetailsPage({ params }: { params: Promise<{ id
       <Navbar />
       
       {/* Club Banner / Header */}
-      <div className="bg-primary-dark text-white py-20 border-b border-primary/20 shadow-inner">
+      <div className="bg-[#004740] text-white py-20 border-b border-primary/20 shadow-inner">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
@@ -36,18 +36,18 @@ export default async function ClubDetailsPage({ params }: { params: Promise<{ id
               
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 mt-8">
                 <div className="flex items-center text-white/90">
-                  <Users className="w-5 h-5 mr-2 text-secondary" />
+                  <Users className="w-5 h-5 mr-2 text-[#8bcbb7]" />
                   <span className="font-medium tracking-wide">{club.members} Active Members</span>
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Mail className="w-5 h-5 mr-2 text-secondary" />
+                  <Mail className="w-5 h-5 mr-2 text-[#8bcbb7]" />
                   <span className="font-medium tracking-wide">{club.email}</span>
                 </div>
               </div>
             </div>
             
             <div className="w-full md:w-auto shrink-0 mt-6 md:mt-0">
-              <Button size="lg" className="w-full md:w-auto px-10 h-14 text-lg rounded-xl bg-primary text-white hover:bg-secondary hover:text-primary-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+              <Button size="lg" className="w-full md:w-auto px-10 h-14 text-lg rounded-xl bg-primary text-white hover:bg-white hover:text-primary transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 Apply to Join
               </Button>
             </div>
