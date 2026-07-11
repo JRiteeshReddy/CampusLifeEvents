@@ -14,18 +14,37 @@ export default function Home() {
         <EventGrid title="Featured Events" />
       </div>
       
-      {/* Simple Footer */}
-      <footer className="bg-dark-primary py-12 text-center text-white/80">
+      <footer className="bg-primary-dark py-16 text-white/90 border-t border-primary/20">
         <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-white mb-4">Campus Life Events</h3>
-          <p className="mb-8">GITAM (Deemed to be University)</p>
-          <div className="flex justify-center space-x-6 text-sm">
-            <Link href="/login" className="hover:text-secondary transition-colors">Admin Login</Link>
-            <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-secondary transition-colors">Contact Us</a>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Campus Life Events</h3>
+              <p className="text-white/70 max-w-sm leading-relaxed text-sm">
+                The official portal for GITAM (Deemed to be University) clubs, fests, workshops, and extracurricular activities.
+              </p>
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="font-semibold text-white mb-4 text-lg">Quick Links</h4>
+              <div className="flex flex-col space-y-3 text-sm">
+                <Link href="/events" className="text-white/70 hover:text-secondary transition-colors">Browse Events</Link>
+                <Link href="/clubs" className="text-white/70 hover:text-secondary transition-colors">Student Clubs</Link>
+                <Link href="/about" className="text-white/70 hover:text-secondary transition-colors">About Us</Link>
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="font-semibold text-white mb-4 text-lg">Support & Legal</h4>
+              <div className="flex flex-col space-y-3 text-sm">
+                <Link href="/login" className="text-white/70 hover:text-secondary transition-colors">Admin Login</Link>
+                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Privacy Policy</a>
+                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Terms of Service</a>
+                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Contact Us</a>
+              </div>
+            </div>
           </div>
-          <p className="mt-8 text-xs opacity-50">&copy; {new Date().getFullYear()} GITAM University. All rights reserved.</p>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
+            <p>&copy; {new Date().getFullYear()} GITAM University. All rights reserved.</p>
+            <p className="mt-4 md:mt-0">Designed for a premium campus experience.</p>
+          </div>
         </div>
       </footer>
     </main>
