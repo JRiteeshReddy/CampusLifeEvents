@@ -50,7 +50,7 @@ export default function Home() {
                 alt="HIVE" 
                 width={80} 
                 height={30} 
-                className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
               />
             </div>
           </div>
