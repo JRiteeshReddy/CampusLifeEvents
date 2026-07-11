@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { LayoutDashboard, Calendar, Users, LogOut, Settings, PlusCircle, CheckSquare, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,23 @@ export function DashboardLayout({
   role: 'CAMPUS_LIFE' | 'CLUB';
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      setIsLoggingOut(true);
+      const res = await fetch('/api/auth/logout', { method: 'POST' });
+      if (res.ok) {
+        router.push('/login');
+        router.refresh();
+      }
+    } catch (error) {
+      console.error('Logout failed:', error);
+    } finally {
+      setIsLoggingOut(false);
+    }
+  };
 
   const clubItems: SidebarItem[] = [
     { name: 'Dashboard', href: '/club', icon: LayoutDashboard },
@@ -82,9 +100,14 @@ export function DashboardLayout({
         </nav>
 
         <div className="p-4 border-t border-border mt-auto">
-          <Button variant="ghost" className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10">
+          <Button 
+            variant="ghost" 
+            className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+            onClick={handleLogout}
+            disabled={isLoggingOut}
+          >
             <LogOut className="mr-3 h-5 w-5" />
-            Logout
+            {isLoggingOut ? "Logging out..." : "Logout"}
           </Button>
         </div>
       </aside>
