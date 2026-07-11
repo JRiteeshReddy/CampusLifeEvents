@@ -3,6 +3,7 @@ import { EventGrid } from "@/components/home/EventGrid";
 import { Stats } from "@/components/home/Stats";
 import { Navbar } from "@/components/layout/Navbar";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -42,7 +43,16 @@ export default function Home() {
           </div>
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
             <p>&copy; {new Date().getFullYear()} GITAM University. All rights reserved.</p>
-            <p className="mt-4 md:mt-0">Designed for a premium campus experience.</p>
+            <div className="mt-4 md:mt-0 flex items-center gap-2">
+              <span>Developed by</span>
+              <Image 
+                src="/images/HIVE logo.png" 
+                alt="HIVE" 
+                width={80} 
+                height={30} 
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
         </div>
       </footer>
