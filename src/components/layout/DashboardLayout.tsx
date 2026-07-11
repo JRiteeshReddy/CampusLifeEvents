@@ -26,7 +26,6 @@ export function DashboardLayout({
     { name: 'My Events', href: '/club/events', icon: Calendar },
     { name: 'Create Event', href: '/club/events/create', icon: PlusCircle },
     { name: 'Registrations', href: '/club/registrations', icon: Users },
-    { name: 'Analytics', href: '/club/analytics', icon: Activity },
     { name: 'Settings', href: '/club/settings', icon: Settings },
   ];
 
