@@ -28,15 +28,14 @@ export default function Home() {
               <div className="flex flex-col space-y-3 text-sm">
                 <Link href="/events" className="text-white/70 hover:text-secondary transition-colors">Browse Events</Link>
                 <Link href="/clubs" className="text-white/70 hover:text-secondary transition-colors">Student Clubs</Link>
-                <Link href="/about" className="text-white/70 hover:text-secondary transition-colors">About Us</Link>
+                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Privacy Policy</a>
+                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Terms of Service</a>
               </div>
             </div>
             <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-semibold text-white mb-4 text-lg">Support & Legal</h4>
+              <h4 className="font-semibold text-white mb-4 text-lg">Support & Contact</h4>
               <div className="flex flex-col space-y-3 text-sm">
                 <Link href="/login" className="text-white/70 hover:text-secondary transition-colors">Admin Login</Link>
-                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Privacy Policy</a>
-                <a href="#" className="text-white/70 hover:text-secondary transition-colors">Terms of Service</a>
                 <a href="#" className="text-white/70 hover:text-secondary transition-colors">Contact Us</a>
               </div>
             </div>
